@@ -1,0 +1,20 @@
+{application, erlcount,
+ [{description, "An OTP application"},
+  {vsn, "1.0.0"},
+  {registered, [erlcount]},
+  {mod, {erlcount, []}},
+  {applications, [kernel, stdlib, ppool]},
+  {env,[
+        {directory, "."},
+        {max_files, 10},
+        {regex, ["if\\s.+->", "case\\s.+\\sof"]}
+       ]
+  },
+  {modules, [
+             erlcount, erlcount_sup, erlcount_lib,
+             erlcount_dispatch, erlcount_counter
+            ]
+  },
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
